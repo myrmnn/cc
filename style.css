@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  background-color: #b7dff1;
+  margin: 1em auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1em 0;
+  border-radius: 10px;
+}
+
+.header__icon {
+  width: 50px;
+}
+
+.header__title {
+  font-size: 1.8em;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+}
+
+.navbar {
+  background: #d5eed8;
+  padding: 0.5em 1em;
+}
+
+.navbar li {
+  list-style: none;
+  margin: 1em 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+}
+/*# sourceMappingURL=style.css.map */
