@@ -1,90 +1,128 @@
+$mainFont: "Poiret One", cursive;
+$scriptFont: "Zeyada", cursive;
+$blue: #397979;
+
 * {
 	padding: 0;
 	margin: 0;
 }
 
 body {
-	font-family: "Poiret One", cursive;
+	font-family: $mainFont;
+	text-align: center;
+	overflow-x: hidden;
 }
 
 .menu {
 	position: absolute;
 	width: 20px;
 	right: 3px;
-	bottom: 0px;
 }
 
 .title {
-	font-size: 1.7rem;
+	font-size: 1.6rem;
+}
+
+.para {
+	padding: 1em 1em;
+	line-height: 1.3;
+	font-size: 1.2rem;
+	font-weight: 600;
 }
 
 .header {
-	position: relative;
+	position: fixed;
 	width: 100%;
 	overflow-x: hidden;
 	z-index: 2;
 	background-color: white;
 
+	&__img {
+		width: 20px;
+	}
+
 	&__logo {
-		background-color: rgb(185, 218, 233);
 		display: flex;
-		width: 300px;
-		margin: 0.5em auto;
 		align-items: center;
-		justify-content: space-evenly;
-		padding: 1em 0;
-		border-radius: 10px;
+		justify-content: center;
+		padding: 0.5em 0;
 		text-align: center;
 	}
 
 	&__icon {
 		width: 50px;
+		margin-right: 1em;
 	}
 
 	&__heading {
 		font-family: "Poiret One", cursive;
 		font-weight: bold;
-		color: #e2875a;
+		color: $blue;
+		font-size: 1.5rem;
+		margin-left: -20px;
 	}
 
 	&__subtitle {
 		font-size: 1.2rem;
-		font-family: "Zeyada", cursive;
+		font-family: $scriptFont;
 		letter-spacing: 1px;
 	}
 }
 
 .navbar {
-	background-color: #ffffffe0;
+	background-color: $blue;
 	padding: 1em 0;
-	position: absolute;
+	position: fixed;
+	top: 74px;
 	width: 100%;
-	top: 0;
-	pointer-events: none;
-	opacity: 0;
-	transition: all 0.3s ease;
+	right: -100%;
+	z-index: 2;
+
+	transition: all 0.5s ease-in-out;
 	& li {
 		list-style: none;
 		margin: 1em 0;
-		padding-left: 0.5em;
 	}
 	& a {
 		text-decoration: none;
-		color: #e2875a;
-		font-weight: bold;
+		color: whitesmoke;
+		// font-weight: bold;
 		font-size: 1.3rem;
 	}
 
 	&.show {
-		top: 14%;
-		opacity: 1;
-		pointer-events: all;
+		right: 0;
+		transition: right 0.5s ease;
 	}
 }
 
 .welcome {
-	background-color: whitesmoke;
+	&__hero {
+		position: relative;
+	}
 
-	&__title {
+	&__heading {
+		padding: 0.75em 0;
+		color: $blue;
+		font-weight: bolder;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 2rem;
+		background: rgba(255, 255, 255, 0.7);
+		width: 100%;
+	}
+
+	&__para {
+	}
+
+	&__span {
+		display: block;
+		margin-top: 10px;
+	}
+
+	&__img {
+		width: 100%;
 	}
 }

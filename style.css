@@ -5,53 +5,64 @@
 
 body {
   font-family: "Poiret One", cursive;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 .menu {
   position: absolute;
   width: 20px;
   right: 3px;
-  bottom: 0px;
 }
 
 .title {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
+}
+
+.para {
+  padding: 1em 1em;
+  line-height: 1.3;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .header {
-  position: relative;
+  position: fixed;
   width: 100%;
   overflow-x: hidden;
   z-index: 2;
   background-color: white;
 }
 
+.header__img {
+  width: 20px;
+}
+
 .header__logo {
-  background-color: #b9dae9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
-  margin: 0.5em auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  padding: 1em 0;
-  border-radius: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5em 0;
   text-align: center;
 }
 
 .header__icon {
   width: 50px;
+  margin-right: 1em;
 }
 
 .header__heading {
   font-family: "Poiret One", cursive;
   font-weight: bold;
-  color: #e2875a;
+  color: #397979;
+  font-size: 1.5rem;
+  margin-left: -20px;
 }
 
 .header__subtitle {
@@ -61,37 +72,58 @@ body {
 }
 
 .navbar {
-  background-color: #ffffffe0;
+  background-color: #397979;
   padding: 1em 0;
-  position: absolute;
+  position: fixed;
+  top: 74px;
   width: 100%;
-  top: 0;
-  pointer-events: none;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  right: -100%;
+  z-index: 2;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .navbar li {
   list-style: none;
   margin: 1em 0;
-  padding-left: 0.5em;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #e2875a;
-  font-weight: bold;
+  color: whitesmoke;
   font-size: 1.3rem;
 }
 
 .navbar.show {
-  top: 14%;
-  opacity: 1;
-  pointer-events: all;
+  right: 0;
+  -webkit-transition: right 0.5s ease;
+  transition: right 0.5s ease;
 }
 
-.welcome {
-  background-color: whitesmoke;
+.welcome__hero {
+  position: relative;
+}
+
+.welcome__heading {
+  padding: 0.75em 0;
+  color: #397979;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+}
+
+.welcome__span {
+  display: block;
+  margin-top: 10px;
+}
+
+.welcome__img {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
