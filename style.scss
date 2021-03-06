@@ -2,43 +2,88 @@
 	padding: 0;
 	margin: 0;
 }
+
+body {
+	overflow-x: hidden;
+	font-family: "Poiret One", cursive;
+}
+
+.menu {
+	position: absolute;
+	width: 20px;
+	right: 3px;
+	bottom: 0px;
+}
+
+.title {
+	font-size: 1.7rem;
+}
+
 .header {
+	position: relative;
 	width: 100%;
 	overflow-x: hidden;
+	z-index: 2;
+	background-color: white;
 
 	&__logo {
+		background-color: rgb(185, 218, 233);
 		display: flex;
 		width: 300px;
-		background-color: rgb(183, 223, 241);
-		margin: 1em auto;
+		margin: 0.5em auto;
 		align-items: center;
 		justify-content: space-evenly;
 		padding: 1em 0;
 		border-radius: 10px;
+		text-align: center;
 	}
 
 	&__icon {
 		width: 50px;
 	}
 
-	&__title {
-		font-size: 1.8em;
+	&__heading {
 		font-family: "Poiret One", cursive;
 		font-weight: bold;
+		color: #e2875a;
+	}
+
+	&__subtitle {
+		font-size: 1.2rem;
+		font-family: "Zeyada", cursive;
+		letter-spacing: 1px;
 	}
 }
 
 .navbar {
-	background: rgb(213, 238, 216);
+	background-color: #ffffffe0;
 	padding: 0.5em 1em;
-
+	position: absolute;
+	width: 100%;
+	top: 0;
+	pointer-events: none;
+	opacity: 0;
+	transition: all 0.3s ease;
 	& li {
 		list-style: none;
 		margin: 1em 0;
 	}
 	& a {
 		text-decoration: none;
-		color: black;
+		color: #e2875a;
+		font-weight: bold;
 		font-size: 1.3rem;
+	}
+
+	&.show {
+		top: 13.5%;
+		opacity: 1;
+	}
+}
+
+.welcome {
+	background-color: whitesmoke;
+
+	&__title {
 	}
 }

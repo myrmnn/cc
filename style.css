@@ -3,18 +3,37 @@
   margin: 0;
 }
 
+body {
+  overflow-x: hidden;
+  font-family: "Poiret One", cursive;
+}
+
+.menu {
+  position: absolute;
+  width: 20px;
+  right: 3px;
+  bottom: 0px;
+}
+
+.title {
+  font-size: 1.7rem;
+}
+
 .header {
+  position: relative;
   width: 100%;
   overflow-x: hidden;
+  z-index: 2;
+  background-color: white;
 }
 
 .header__logo {
+  background-color: #b9dae9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 300px;
-  background-color: #b7dff1;
-  margin: 1em auto;
+  margin: 0.5em auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -23,21 +42,35 @@
           justify-content: space-evenly;
   padding: 1em 0;
   border-radius: 10px;
+  text-align: center;
 }
 
 .header__icon {
   width: 50px;
 }
 
-.header__title {
-  font-size: 1.8em;
+.header__heading {
   font-family: "Poiret One", cursive;
   font-weight: bold;
+  color: #e2875a;
+}
+
+.header__subtitle {
+  font-size: 1.2rem;
+  font-family: "Zeyada", cursive;
+  letter-spacing: 1px;
 }
 
 .navbar {
-  background: #d5eed8;
+  background-color: #ffffffe0;
   padding: 0.5em 1em;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .navbar li {
@@ -47,7 +80,17 @@
 
 .navbar a {
   text-decoration: none;
-  color: black;
+  color: #e2875a;
+  font-weight: bold;
   font-size: 1.3rem;
+}
+
+.navbar.show {
+  top: 13.5%;
+  opacity: 1;
+}
+
+.welcome {
+  background-color: whitesmoke;
 }
 /*# sourceMappingURL=style.css.map */
