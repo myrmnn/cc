@@ -1,6 +1,7 @@
 $mainFont: "Poiret One", cursive;
 $scriptFont: "Zeyada", cursive;
 $blue: #397979;
+$blueAlpha: #749b768f;
 
 * {
 	padding: 0;
@@ -15,8 +16,14 @@ body {
 
 .menu {
 	position: absolute;
-	width: 20px;
-	right: 3px;
+	width: 25px;
+	right: 5px;
+	cursor: pointer;
+	border-radius: 50%;
+
+	&.open {
+		background-color: $blueAlpha;
+	}
 }
 
 .title {
@@ -26,7 +33,7 @@ body {
 .para {
 	padding: 1em 1em;
 	line-height: 1.3;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	font-weight: 600;
 }
 
@@ -103,26 +110,35 @@ body {
 
 	&__heading {
 		padding: 0.75em 0;
-		color: $blue;
 		font-weight: bolder;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
-		font-size: 2rem;
+		transform: translate(-50%);
+		font-size: 1.8rem;
 		background: rgba(255, 255, 255, 0.7);
 		width: 100%;
-	}
-
-	&__para {
 	}
 
 	&__span {
 		display: block;
 		margin-top: 10px;
+
+		&--heading {
+			font-size: 1.4rem;
+			display: block;
+			margin-bottom: 10px;
+			text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.3);
+			color: $blue;
+		}
 	}
 
 	&__img {
 		width: 100%;
+		margin-top: 75px;
 	}
+}
+
+.about {
+	background-color: $blueAlpha;
 }
