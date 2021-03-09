@@ -1,6 +1,8 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -9,16 +11,30 @@ body {
   overflow-x: hidden;
 }
 
+@media screen and (min-width: 1000px) {
+  body {
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
+
 .menu {
   position: absolute;
   width: 25px;
   right: 5px;
   cursor: pointer;
+  outline: none;
   border-radius: 50%;
 }
 
 .menu.open {
-  background-color: #749b768f;
+  background-color: #51adad;
+}
+
+@media screen and (min-width: 1000px) {
+  .menu {
+    display: none;
+  }
 }
 
 .title {
@@ -38,6 +54,13 @@ body {
   overflow-x: hidden;
   z-index: 2;
   background-color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  .header {
+    width: 1000px;
+    position: relative;
+  }
 }
 
 .header__img {
@@ -77,33 +100,120 @@ body {
   letter-spacing: 1px;
 }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .navbar {
   background-color: #397979;
-  padding: 1em 0;
   position: fixed;
   top: 74px;
   width: 100%;
   right: -100%;
   z-index: 2;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  -webkit-transition: right 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  transition: right 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar {
+    right: 0;
+    opacity: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    left: 0;
+    width: 1000px;
+    margin: 0 auto;
+    position: static;
+  }
+  .navbar.fixedNav {
+    position: fixed;
+    top: 0;
+    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .navbar li {
   list-style: none;
-  margin: 1em 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 1em 0;
+  position: relative;
+}
+
+.navbar li.logo {
+  display: none;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar li.logo {
+    background: whitesmoke;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    white-space: nowrap;
+    max-width: 0;
+  }
+  .navbar li.logo.show {
+    max-width: 600px;
+  }
+  .navbar li.logo a {
+    font-weight: bold;
+    margin-left: 0.3em;
+    color: black;
+  }
 }
 
 .navbar a {
   text-decoration: none;
   color: whitesmoke;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+}
+
+.navbar a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  margin: 0 auto;
+  bottom: 15px;
+  left: 25%;
+  background: whitesmoke;
+  -webkit-transform: scalex(0);
+          transform: scalex(0);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.navbar a:hover::after, .navbar a:focus::after {
+  -webkit-transform: scalex(1);
+          transform: scalex(1);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .navbar.show {
   right: 0;
-  -webkit-transition: right 0.5s ease;
-  transition: right 0.5s ease;
+  opacity: 1;
 }
 
 .welcome__hero {
@@ -139,6 +249,12 @@ body {
 .welcome__img {
   width: 100%;
   margin-top: 75px;
+}
+
+@media screen and (min-width: 1000px) {
+  .welcome__img {
+    margin-top: 0;
+  }
 }
 
 .about {

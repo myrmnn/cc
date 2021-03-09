@@ -6,12 +6,18 @@ $blueAlpha: #749b768f;
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
 	font-family: $mainFont;
 	text-align: center;
 	overflow-x: hidden;
+
+	@media screen and (min-width: 1000px) {
+		width: 1000px;
+		margin: 0 auto;
+	}
 }
 
 .menu {
@@ -19,10 +25,15 @@ body {
 	width: 25px;
 	right: 5px;
 	cursor: pointer;
+	outline: none;
 	border-radius: 50%;
 
 	&.open {
-		background-color: $blueAlpha;
+		background-color: lighten($blue, 15%);
+	}
+
+	@media screen and (min-width: 1000px) {
+		display: none;
 	}
 }
 
@@ -43,6 +54,11 @@ body {
 	overflow-x: hidden;
 	z-index: 2;
 	background-color: white;
+
+	@media screen and (min-width: 1000px) {
+		width: 1000px;
+		position: relative;
+	}
 
 	&__img {
 		width: 20px;
@@ -75,31 +91,98 @@ body {
 		letter-spacing: 1px;
 	}
 }
+nav {
+	display: flex;
+}
 
 .navbar {
 	background-color: $blue;
-	padding: 1em 0;
 	position: fixed;
 	top: 74px;
 	width: 100%;
 	right: -100%;
 	z-index: 2;
+	opacity: 0;
+	transition: right 0.7s ease-in-out, opacity 0.7s ease-in-out;
 
-	transition: all 0.5s ease-in-out;
+	@media screen and (min-width: 1000px) {
+		right: 0;
+		opacity: 1;
+		display: flex;
+		left: 0;
+		width: 1000px;
+		margin: 0 auto;
+		position: static;
+
+		&.fixedNav {
+			position: fixed;
+			top: 0;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+		}
+	}
+
 	& li {
 		list-style: none;
-		margin: 1em 0;
+		flex: 1;
+		padding: 1em 0;
+		position: relative;
+
+		&.logo {
+			display: none;
+			transition: all 1s ease-in-out;
+
+			@media screen and (min-width: 1000px) {
+				background: whitesmoke;
+
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				white-space: nowrap;
+				max-width: 0;
+
+				&.show {
+					max-width: 600px;
+				}
+
+				& a {
+					font-weight: bold;
+					margin-left: 0.3em;
+					color: black;
+				}
+			}
+		}
 	}
+
 	& a {
 		text-decoration: none;
 		color: whitesmoke;
-		// font-weight: bold;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 50%;
+			height: 1px;
+			margin: 0 auto;
+			bottom: 15px;
+			left: 25%;
+			background: whitesmoke;
+			transform: scalex(0);
+			transform-origin: center;
+			transition: transform 0.5s ease;
+		}
+
+		&:hover::after,
+		&:focus::after {
+			transform: scalex(1);
+			transition: transform 0.5s ease;
+		}
 	}
 
 	&.show {
 		right: 0;
-		transition: right 0.5s ease;
+		opacity: 1;
 	}
 }
 
@@ -136,6 +219,9 @@ body {
 	&__img {
 		width: 100%;
 		margin-top: 75px;
+		@media screen and (min-width: 1000px) {
+			margin-top: 0;
+		}
 	}
 }
 
